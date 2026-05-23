@@ -3,7 +3,7 @@ const blogs = [
     id: 1,
     title: "Why Surat is Becoming Gujarat’s Fastest Growing Real Estate Hub",
     desc: "Explore why Surat is rapidly becoming one of Gujarat’s strongest real estate destinations.",
-    img: "/public/Image/BlogTopic1.png",
+    img: "Image/BlogTopic1.png",
     tag: "Investment",
 
     readTime: "5 min",
@@ -189,7 +189,7 @@ const blogs = [
     id: 2,
     title: "Things to Check Before Buying a Residential Plot",
     desc: "Important factors every buyer should verify before investing in a residential plot.",
-    img: "/public/Image/BlogTopic2.png",
+    img: "Image/BlogTopic2.png",
     tag: "Real Estate",
     readTime: "5 min",
     content: `
@@ -309,7 +309,7 @@ const blogs = [
     id: 3,
     title: "Why Early Investment in Developing Areas Gives Higher ROI",
     desc:"Discover why investing early in developing locations can provide higher returns, stronger appreciation, and better long-term opportunities.",
-    img: "/public/Image/BlogTopic3.png",
+    img: "Image/BlogTopic3.png",
     tag: "Investment",
     readTime: "6 min",
     content: `
@@ -454,7 +454,7 @@ const blogs = [
     id: 4,
     title: "Plot vs Flat: Which is Better for Long-Term Investment?",
     desc: "Compare plots and flats to understand which investment offers better long-term value, appreciation, and financial growth.",
-    img: "/public/Image/BlogTopic4.png",
+    img: "Image/BlogTopic4.png",
     tag: "Investment",
     readTime: "5 min",
     content: `
@@ -603,7 +603,7 @@ const blogs = [
     id: 5,
     title: "How Wide Roads Increase Property Value",
     desc: "Understand how wide roads and better connectivity play a major role in increasing property demand and long-term real estate value.",
-    img: "/public/Image/BlogTopic5.png",
+    img: "Image/BlogTopic5.png",
     tag: "Infrastructure",
     readTime: "5 min",
     content: `
@@ -781,7 +781,7 @@ const blogs = [
     id: 6,
     title: "Why Gated Communities Have Higher Resale Value",
     desc: "Explore why gated communities attract higher buyer demand and offer stronger long-term resale value in modern real estate markets.",
-    img: "/public/Image/BlogTopic6.png",
+    img: "Image/BlogTopic6.png",
     tag: "Residential",
     readTime: "5 min",
     content: `
