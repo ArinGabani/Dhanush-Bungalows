@@ -10,6 +10,7 @@ const fadeUp = {
   },
 };
 
+
 const ProjectInfo = () => {
   return (
 
@@ -235,7 +236,7 @@ const ProjectInfo = () => {
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#d8a8aa]/5 to-transparent z-10 pointer-events-none" />
                   
                   <img 
-                    src="./ProfileInfo-image1.png" 
+                    src="./public/Image/DhanushLayout.png" 
                     alt="Premium Living at Dhanush Bungalows"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition duration-1000 ease-out"
                   />

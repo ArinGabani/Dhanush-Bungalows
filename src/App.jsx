@@ -6,6 +6,7 @@ import ProjectInfo from "./pages/ProjectInfo"
 import Gallery from "./pages/Gallery"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
+import Blog from "./pages/Blog"
 
 import './App.css'
 
@@ -46,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProjectInfo />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
