@@ -1650,7 +1650,7 @@ const ProjectInfo = () => {
                   </motion.button>
                 </a>
 
-                {/* Download Brochure Button */}
+                {/* Whatsapp Button */}
                 <a
                   href="https://wa.me/919824386300"
                   target="_blank"
