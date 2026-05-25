@@ -213,7 +213,7 @@ export default function About() {
             />
             <motion.div style={{ y: imgY }} className="relative z-10 overflow-hidden rounded-[40px]">
               <motion.img
-                src="../public/Image/About-Hero.png"
+                src="Image/About-Hero.png"
                 alt="Luxury Living"
                 className="w-full h-[750px] object-cover shadow-2xl border border-white/50 rounded-[40px]"
                 whileHover={{ scale: 1.03 }}
@@ -266,7 +266,7 @@ export default function About() {
               />
               <div className="relative z-10 overflow-hidden rounded-[40px]">
                 <motion.img
-                  src="../public/Image/About-OurStory.png"
+                  src="Image/About-OurStory.png"
                   alt="About Dhanush"
                   className="w-full h-[650px] object-cover shadow-2xl rounded-[40px]"
                   whileHover={{ scale: 1.04 }}
