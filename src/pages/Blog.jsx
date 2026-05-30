@@ -381,23 +381,26 @@ function Blog() {
             transition={{ duration: 0.8, ease: easeInOut, delay: 0.55 }}
             className="mt-12 flex items-center justify-center gap-4 flex-wrap"
           >
-            <motion.button
-              whileHover={{ scale: 1.06, y: -3, boxShadow: "0 24px 60px rgba(185,124,128,0.45)" }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ duration: 0.25 }}
-              className="px-10 py-4 rounded-full bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white font-semibold shadow-xl shadow-[#d8a8aa]/30 tracking-wide"
-            >
-              Explore Articles
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ duration: 0.25 }}
-              className="px-10 py-4 rounded-full bg-white/70 backdrop-blur-sm border border-[#d8a8aa]/40 text-[#b97c80] font-semibold shadow-md tracking-wide"
-            >
-              Contact Us
-            </motion.button>
+            <a href="#Articles">
+              <motion.button
+                whileHover={{ scale: 1.06, y: -3, boxShadow: "0 24px 60px rgba(185,124,128,0.45)" }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                className="px-10 py-4 rounded-full bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white font-semibold shadow-xl shadow-[#d8a8aa]/30 tracking-wide"
+              >
+                Explore Articles
+              </motion.button>
+            </a>
+            <a href="tel:+919824386300">
+              <motion.button
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                className="px-10 py-4 rounded-full bg-white/70 backdrop-blur-sm border border-[#d8a8aa]/40 text-[#b97c80] font-semibold shadow-md tracking-wide"
+              >
+                Contact Us
+              </motion.button>
+            </a>
           </motion.div>
 
           {/* Scroll indicator */}
@@ -451,7 +454,7 @@ function Blog() {
       {/* ═══════════════════════════════════════════════════════
           BLOG SECTION
       ═══════════════════════════════════════════════════════ */}
-      <section className="relative z-10 py-24 px-6 md:px-12 lg:px-20">
+      <section id="Articles" className="relative z-10 py-24 px-6 md:px-12 lg:px-20">
 
         {/* Section title */}
         <div ref={sectionRef} className="text-center mb-20">
@@ -563,23 +566,26 @@ function Blog() {
               transition={{ duration: 0.7, delay: 0.5 }}
               className="mt-10 flex items-center justify-center gap-4 flex-wrap"
             >
-              <motion.button
-                whileHover={{ scale: 1.06, y: -3, boxShadow: "0 20px 50px rgba(185,124,128,0.4)" }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ duration: 0.25 }}
-                className="px-10 py-4 bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white rounded-full font-semibold shadow-xl shadow-[#d8a8aa]/30 tracking-wide"
-              >
-                Contact Now
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.04, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ duration: 0.25 }}
-                className="px-10 py-4 border border-[#d8a8aa]/50 text-[#b97c80] rounded-full font-semibold bg-white/50 backdrop-blur-sm tracking-wide"
-              >
-                View Plots
-              </motion.button>
+              <a href="tel:+919824386300">
+                <motion.button
+                  whileHover={{ scale: 1.06, y: -3, boxShadow: "0 20px 50px rgba(185,124,128,0.4)" }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={{ duration: 0.25 }}
+                  className="px-10 py-4 bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white rounded-full font-semibold shadow-xl shadow-[#d8a8aa]/30 tracking-wide"
+                >
+                  Contact Now
+                </motion.button>
+              </a>
+              <a href="/gallery">
+                <motion.button
+                  whileHover={{ scale: 1.04, y: -2 }}
+                  whileTap={{ scale: 0.96 }}
+                  transition={{ duration: 0.25 }}
+                  className="px-10 py-4 border border-[#d8a8aa]/50 text-[#b97c80] rounded-full font-semibold bg-white/50 backdrop-blur-sm tracking-wide"
+                >
+                  View Plots
+                </motion.button>
+              </a>
             </motion.div>
           </div>
         </motion.div>

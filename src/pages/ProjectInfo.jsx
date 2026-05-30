@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
   show: {
@@ -140,32 +141,40 @@ const ProjectInfo = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               {/* PRIMARY CTA */}
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-10 py-4 bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white rounded-full font-semibold shadow-2xl shadow-[#d8a8aa]/40 overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center gap-3">
-                  Explore Plots
-                  <motion.svg 
-                    className="w-5 h-5" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </motion.svg>
-                </span>
-                
-                {/* ANIMATED SHINE EFFECT */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                  animate={{ x: ['-200%', '200%'] }}
-                  transition={{ duration: 3, repeat: Infinity, repeatDelay: 1 }}
-                />
-              </motion.button>
+              <Link to="/gallery">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-10 py-4 bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white rounded-full font-semibold shadow-2xl shadow-[#d8a8aa]/40 overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    Explore Plots
+
+                    <motion.svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </motion.svg>
+                  </span>
+
+                  {/* ANIMATED SHINE EFFECT */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    animate={{ x: ["-200%", "200%"] }}
+                    transition={{ duration: 3, repeat: Infinity, repeatDelay: 1 }}
+                  />
+                </motion.button>
+              </Link>
 
               {/* SECONDARY CTA */}
               <a href="https://www.google.com/maps/place/DHANUSH+BUNGALOWS/@21.2282268,72.7601509,773m/data=!3m1!1e3!4m15!1m8!3m7!1s0x3be04c7ca7106f3f:0x73e5a5c159b0b8ec!2sDhanush+Bungalow+Rd,+Okha,+Gujarat+395005!3b1!8m2!3d21.2282218!4d72.7627258!16s%2Fg%2F11yw66gdcp!3m5!1s0x3be04d007bbba167:0x1afbc56fea8f3ef4!8m2!3d21.2287398!4d72.7605411!16s%2Fg%2F11y3q6zhc3!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D"
@@ -309,16 +318,18 @@ const ProjectInfo = () => {
                 </div>
 
                 {/* CTA Button */}
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group mt-8 px-8 py-4 bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white rounded-full font-medium shadow-lg shadow-[#d8a8aa]/30 hover:shadow-xl hover:shadow-[#d8a8aa]/40 transition-all duration-300 flex items-center gap-3"
-                >
-                  <span>Explore Plots</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </motion.button>
+                <Link to="/gallery">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group mt-8 px-8 py-4 bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white rounded-full font-medium shadow-lg shadow-[#d8a8aa]/30 hover:shadow-xl hover:shadow-[#d8a8aa]/40 transition-all duration-300 flex items-center gap-3"
+                  >
+                    <span>Explore Plots</span>
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </motion.button>
+                </Link>
               </motion.div>
 
             </div>
@@ -986,24 +997,25 @@ const ProjectInfo = () => {
               </div>
 
               {/* Bottom CTA Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="mt-16 text-center"
-              >
-                <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r 
-                from-[#b97c80] to-[#d8a8aa] text-white rounded-full shadow-2xl
-                hover:shadow-[#d8a8aa]/50 hover:scale-105 transition-all duration-300 cursor-pointer">
-                  <span className="text-2xl">🎯</span>
-                  <span className="font-semibold text-lg">Your Perfect Plot Awaits</span>
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-              </motion.div>
-
+              <Link to="/gallery">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="mt-16 text-center"
+                >
+                  <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r 
+                  from-[#b97c80] to-[#d8a8aa] text-white rounded-full shadow-2xl
+                  hover:shadow-[#d8a8aa]/50 hover:scale-105 transition-all duration-300 cursor-pointer">
+                    <span className="text-2xl">🎯</span>
+                    <span className="font-semibold text-lg">Your Perfect Plot Awaits</span>
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                </motion.div>
+              </Link> 
             </div>
         </section>
 

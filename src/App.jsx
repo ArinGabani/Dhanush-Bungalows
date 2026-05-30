@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
@@ -10,6 +10,23 @@ import Blog from "./pages/Blog"
 
 import './App.css'
 
+// 🔥 AUTO SCROLL TO TOP ON PAGE CHANGE
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [pathname]);
+
+  return null;
+}
+
 // 🔥 Scroll To Top Button
 function ScrollToTopButton() {
   const [show, setShow] = useState(false);
@@ -18,7 +35,9 @@ function ScrollToTopButton() {
     const handleScroll = () => {
       setShow(window.scrollY > 300);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -39,6 +58,9 @@ function App() {
   return (
     <BrowserRouter>
 
+      {/* 🔥 ADD THIS */}
+      <ScrollToTop />
+
       {/* Navbar */}
       <Navbar />
 
@@ -53,7 +75,7 @@ function App() {
         </Routes>
       </div>
 
-      {/* 🔥 Replace WhatsApp with Scroll Button */}
+      {/* Scroll Button */}
       <ScrollToTopButton />
 
       {/* Footer */}

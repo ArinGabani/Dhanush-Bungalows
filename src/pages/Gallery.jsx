@@ -1,25 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from "framer-motion";
+import InstaReel from "../components/InstaReel";
 
 /* ─── Gallery data ────────────────────────────────────────────────────── */
 const categories = ["All", "Plots", "Amenities", "Roads", "Greenery", "Community"];
 
 const images = [
-  { id: 1,  src: "./gallery/plot-aerial.jpg",      cat: "Plots",     title: "Aerial plot overview",       size: "tall" },
-  { id: 2,  src: "./gallery/main-gate.jpg",         cat: "Community", title: "Grand entrance gate",        size: "wide" },
-  { id: 3,  src: "./gallery/garden.jpg",            cat: "Greenery",  title: "Landscaped garden",          size: "square" },
-  { id: 4,  src: "./gallery/road-1.jpg",            cat: "Roads",     title: "25 ft internal road",        size: "wide" },
-  { id: 5,  src: "./gallery/kids-area.jpg",         cat: "Amenities", title: "Kids play area",             size: "square" },
-  { id: 6,  src: "./gallery/plot-east.jpg",         cat: "Plots",     title: "East-facing plots",          size: "square" },
-  { id: 7,  src: "./gallery/solar.jpg",             cat: "Amenities", title: "Solar power system",         size: "tall" },
-  { id: 8,  src: "./gallery/gazebo.jpg",            cat: "Community", title: "Gazebo gathering area",      size: "wide" },
-  { id: 9,  src: "./gallery/jogging.jpg",           cat: "Amenities", title: "Jogging track",              size: "square" },
-  { id: 10, src: "./gallery/greenery-2.jpg",        cat: "Greenery",  title: "Tree-lined walkway",         size: "wide" },
-  { id: 11, src: "./gallery/road-2.jpg",            cat: "Roads",     title: "Road connectivity",          size: "square" },
-  { id: 12, src: "./gallery/plot-west.jpg",         cat: "Plots",     title: "West-facing plots",          size: "tall" },
-  { id: 13, src: "./gallery/badminton.jpg",         cat: "Amenities", title: "Badminton court",            size: "wide" },
-  { id: 14, src: "./gallery/seating.jpg",           cat: "Community", title: "Garden seating area",        size: "square" },
-  { id: 15, src: "./gallery/drainage.jpg",          cat: "Community", title: "Modern drainage system",     size: "square" },
+  { id: 1,  src: "Image/PlotOverview.png",      cat: "Plots",     title: "Aerial plot overview",       size: "tall" },
+  { id: 2,  src: "Image/DhanushGate.png",         cat: "Community", title: "Grand entrance gate",        size: "wide" },
+  { id: 3,  src: "Image/LandscapeGarden.jpg",            cat: "Greenery",  title: "Landscaped garden",          size: "square" },
+  { id: 4,  src: "Image/WideRoad.jpg",            cat: "Roads",     title: "25 ft internal road",        size: "wide" },
+  { id: 5,  src: "Image/KidsArea.jpg",         cat: "Amenities", title: "Kids play area",             size: "square" },
+  { id: 6,  src: "Image/GazeboGathering.jpeg",            cat: "Community", title: "Gazebo gathering area",      size: "square" },
+  { id: 7,  src: "Image/JoggingTrack.jpg",           cat: "Amenities", title: "Jogging track",              size: "square" },
+  { id: 8, src: "Image/TreeLinedWalkway.jpg",        cat: "Greenery",  title: "Tree-lined walkway",         size: "wide" },
+  { id: 9, src: "Image/BadmintonCourt.jpg",         cat: "Amenities", title: "Badminton court",            size: "wide" },
+  { id: 10, src: "Image/GardenSeating.jpg",           cat: "Community", title: "Garden seating area",        size: "square" },
+  
 ];
 
 /* Gradient placeholder colours per category */
@@ -364,6 +361,12 @@ const Gallery = () => {
             <p className="text-lg">No images in this category yet.</p>
           </motion.div>
         )}
+
+        
+
+          <div className="relative z-10 px-6 md:px-12 py-20">
+            <InstaReel />
+          </div>
 
         {/* ── Bottom CTA ── */}
         <motion.div

@@ -1,27 +1,21 @@
 import { motion } from "framer-motion";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <FaInstagram />, label: "Instagram", href: "#" },
-    { icon: <FaFacebook />, label: "Facebook", href: "#" },
-    { icon: <FaYoutube />, label: "YouTube", href: "#" }
+    { icon: <FaInstagram />, label: "Instagram", href: "https://www.instagram.com/dhanush_surat" },
+    { icon: <FaFacebook />, label: "Facebook", href: "https://www.facebook.com/dhanushsurat" },
+    { icon: <FaYoutube />, label: "YouTube", href: "https://www.youtube.com/@Dhanushsurat" }
   ];
 
   const quickLinks = [
-    { name: "Project Info", href: "#project" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Amenities", href: "#amenities" },
-    { name: "Location", href: "#location" }
-  ];
-
-  const legalLinks = [
-    { name: "Privacy Policy", href: "#privacy" },
-    { name: "Terms of Service", href: "#terms" },
-    { name: "RERA Details", href: "#rera" }
+    { name: "Gallery", href: "/Gallery" },
+    { name: "Blog", href: "/Blog" },
+    { name: "About", href: "/About" },
+    { name: "Contact", href: "/Contact" }
   ];
 
   return (
@@ -322,33 +316,6 @@ export default function Footer() {
           >
             © {currentYear} Dhanush Bungalows. All rights reserved.
           </motion.p>
-
-          {/* Legal Links */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.1 } }
-            }}
-            className="flex gap-6"
-          >
-            {legalLinks.map((link, i) => (
-              <motion.a
-                key={i}
-                href={link.href}
-                variants={{
-                  hidden: { opacity: 0, y: 10 },
-                  visible: { opacity: 1, y: 0 }
-                }}
-                whileHover={{ y: -2, color: "#b97c80" }}
-                className="text-xs text-[#888] hover:text-[#b97c80] transition-colors cursor-pointer"
-              >
-                {link.name}
-              </motion.a>
-            ))}
-          </motion.div>
-
         </motion.div>
 
       </div>
