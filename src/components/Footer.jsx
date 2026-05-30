@@ -146,19 +146,20 @@ export default function Footer() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <motion.a
-                    href={link.href}
-                    whileHover={{ x: 5, color: "#b97c80" }}
+                  <motion.div
+                    whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="text-[#666] hover:text-[#b97c80] transition-colors 
-                    flex items-center gap-2 group cursor-pointer" 
                   >
-                    <motion.span
-                      className="w-1 h-1 bg-[#d8a8aa] rounded-full 
-                      group-hover:w-2 group-hover:bg-[#b97c80] transition-all"
-                    />
-                    {link.name}
-                  </motion.a>
+                    <Link
+                      to={link.href}
+                      className="text-[#666] hover:text-[#b97c80] transition-colors flex items-center gap-2 group cursor-pointer"
+                    >
+                      <span
+                        className="w-1 h-1 bg-[#d8a8aa] rounded-full group-hover:w-2 group-hover:bg-[#b97c80] transition-all"
+                      />
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 </motion.li>
               ))}
             </ul>

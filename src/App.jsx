@@ -68,10 +68,10 @@ function App() {
       <div className="pt-16">
         <Routes>
           <Route path="/" element={<ProjectInfo />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </div>
 
