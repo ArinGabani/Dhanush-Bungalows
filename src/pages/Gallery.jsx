@@ -8,14 +8,13 @@ const categories = ["All", "Plots", "Amenities", "Roads", "Greenery", "Community
 const images = [
   { id: 1,  src: "Image/PlotOverview.png",      cat: "Plots",     title: "Aerial plot overview",       size: "tall" },
   { id: 2,  src: "Image/DhanushGate.png",         cat: "Community", title: "Grand entrance gate",        size: "wide" },
-  { id: 3,  src: "Image/LandscapeGarden.jpg",            cat: "Greenery",  title: "Landscaped garden",          size: "square" },
-  { id: 4,  src: "Image/WideRoad.jpg",            cat: "Roads",     title: "25 ft internal road",        size: "wide" },
-  { id: 5,  src: "Image/KidsArea.jpg",         cat: "Amenities", title: "Kids play area",             size: "square" },
+  { id: 3,  src: "Image/LandscapeGarden.jpeg",            cat: "Greenery",  title: "Landscaped garden",          size: "square" },
+  { id: 4,  src: "Image/WideRoad.png",            cat: "Roads",     title: "25 ft internal road",        size: "wide" },
+  { id: 5,  src: "Image/KidsArea.jpeg",         cat: "Amenities", title: "Kids play area",             size: "square" },
   { id: 6,  src: "Image/GazeboGathering.jpeg",            cat: "Community", title: "Gazebo gathering area",      size: "square" },
-  { id: 7,  src: "Image/JoggingTrack.jpg",           cat: "Amenities", title: "Jogging track",              size: "square" },
-  { id: 8, src: "Image/TreeLinedWalkway.jpg",        cat: "Greenery",  title: "Tree-lined walkway",         size: "wide" },
-  { id: 9, src: "Image/BadmintonCourt.jpg",         cat: "Amenities", title: "Badminton court",            size: "wide" },
-  { id: 10, src: "Image/GardenSeating.jpg",           cat: "Community", title: "Garden seating area",        size: "square" },
+  { id: 7,  src: "Image/JoggingTrack.png",           cat: "Amenities", title: "Jogging track",              size: "square" },
+  { id: 8, src: "Image/BadmintionCourt.png",         cat: "Amenities", title: "Badminton court",            size: "square" },
+  { id: 9, src: "Image/GardenSeating.jpeg",           cat: "Community", title: "Garden seating area",        size: "square" },
   
 ];
 
