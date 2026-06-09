@@ -78,6 +78,52 @@ function FloatInput({ label, type = "text", name, value, onChange, required }) {
   );
 }
 
+/* ── Budget Dropdown ── */
+function BudgetSelect({ value, onChange }) {
+  const [focused, setFocused] = useState(false);
+  const active = focused || value;
+  const budgetOptions = [
+    "₹90 Lakhs – ₹1.5 Crore",
+    "₹1.5 – ₹2 Crore",
+    "Above ₹2 Crore",
+  ];
+  return (
+    <div className="relative">
+      <motion.label
+        animate={{ top: active ? "8px" : "50%", fontSize: active ? "11px" : "15px", color: active ? "#b97c80" : "#aaa" }}
+        transition={{ duration: 0.2 }}
+        style={{ position: "absolute", left: "20px", transform: active ? "none" : "translateY(-50%)", pointerEvents: "none", fontWeight: 500, letterSpacing: "0.03em", zIndex: 10 }}
+      >Select Budget</motion.label>
+      {/* Chevron icon */}
+      <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-[#b97c80]">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+          <path d="M1 1l5 5 5-5" stroke="#b97c80" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      </div>
+      <motion.select
+        name="budget"
+        value={value}
+        onChange={onChange}
+        required
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        whileFocus={{ borderColor: "#d8a8aa", boxShadow: "0 0 0 3px rgba(216,168,170,0.15)" }}
+        style={{
+          paddingTop: active ? "28px" : "18px",
+          appearance: "none",
+          WebkitAppearance: "none",
+        }}
+        className="w-full px-5 pb-4 pr-10 rounded-2xl border border-[#e8dada]/70 bg-white/80 backdrop-blur-sm text-[#2a2a2a] text-base outline-none transition-all duration-200 focus:border-[#d8a8aa] cursor-pointer"
+      >
+        <option value="" disabled></option>
+        {budgetOptions.map((opt) => (
+          <option key={opt} value={opt}>{opt}</option>
+        ))}
+      </motion.select>
+    </div>
+  );
+}
+
 function FloatTextarea({ label, name, value, onChange, required }) {
   const [focused, setFocused] = useState(false);
   const active = focused || value;
@@ -123,16 +169,33 @@ function InfoCard({ icon, title, lines, delay }) {
   );
 }
 
+const WHATSAPP_NUMBER = "919824386300";
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", budget: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Build the WhatsApp message
+    const msg = [
+      `🏡 *New Enquiry – Dhanush Bungalows*`,
+      ``,
+      `👤 *Name:* ${form.name}`,
+      `📧 *Email:* ${form.email}`,
+      `📞 *Phone:* ${form.phone}`,
+      `💰 *Budget:* ${form.budget}`,
+      `💬 *Message:* ${form.message}`,
+    ].join("\n");
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
-    setForm({ name: "", email: "", phone: "", message: "" });
+    setForm({ name: "", email: "", phone: "", budget: "", message: "" });
   };
 
   return (
@@ -404,13 +467,21 @@ export default function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <motion.div variants={stagger} initial="hidden" animate="show" className="space-y-5">
+
                   <motion.div variants={fadeUp}>
                     <FloatInput label="Your Full Name" name="name" value={form.name} onChange={handleChange} required />
                   </motion.div>
+
                   <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
                     <FloatInput label="Email Address" type="email" name="email" value={form.email} onChange={handleChange} required />
                     <FloatInput label="Mobile Number" type="tel" name="phone" value={form.phone} onChange={handleChange} required />
                   </motion.div>
+
+                  {/* ── NEW: Budget Dropdown ── */}
+                  <motion.div variants={fadeUp}>
+                    <BudgetSelect value={form.budget} onChange={handleChange} />
+                  </motion.div>
+
                   <motion.div variants={fadeUp}>
                     <FloatTextarea label="Your Message" name="message" value={form.message} onChange={handleChange} required />
                   </motion.div>
@@ -420,9 +491,10 @@ export default function Contact() {
                       type="submit"
                       className="w-full py-5 rounded-2xl bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] text-white font-bold text-lg shadow-xl shadow-[#d8a8aa]/30 hover:shadow-2xl hover:shadow-[#d8a8aa]/40 transition-shadow duration-300"
                     >
-                      Send Message ✦
+                      Send via WhatsApp ✦
                     </MagneticButton>
                   </motion.div>
+
                 </motion.div>
               </form>
 
@@ -443,8 +515,8 @@ export default function Contact() {
                       className="w-8 h-8 rounded-full bg-gradient-to-br from-[#d8a8aa] to-[#b97c80] text-white flex items-center justify-center font-bold flex-shrink-0"
                     >✓</motion.div>
                     <div>
-                      <p className="font-semibold text-[#b97c80]">Message Sent!</p>
-                      <p className="text-sm text-[#888]">We'll get back to you within 24 hours.</p>
+                      <p className="font-semibold text-[#b97c80]">Opening WhatsApp!</p>
+                      <p className="text-sm text-[#888]">Your details are pre-filled and ready to send.</p>
                     </div>
                   </motion.div>
                 )}
