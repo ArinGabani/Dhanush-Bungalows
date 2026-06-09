@@ -169,6 +169,7 @@ function InfoCard({ icon, title, lines, delay }) {
   );
 }
 
+/* Send in whatsapp*/
 const WHATSAPP_NUMBER = "919824386300";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", budget: "", message: "" });
@@ -318,7 +319,7 @@ export default function Contact() {
             {/* TOP LINE */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d8a8aa]/60 to-transparent"></div>
 
-            <div className="relative z-10 grid md:grid-cols-2">
+            <div className="relative z-10 grid lg:grid-cols-2">
 
               {/* LOCATION SIDE */}
               <div className="relative p-10 lg:p-14">
@@ -326,7 +327,7 @@ export default function Contact() {
                 {/* Divider */}
                 <div className="hidden md:block absolute top-10 right-0 w-[1px] h-[80%] bg-gradient-to-b from-transparent via-[#e7d4d5] to-transparent"></div>
 
-                <div className="flex items-start gap-5">
+                <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-5">
 
                   {/* ICON */}
                   <motion.div
@@ -360,7 +361,7 @@ export default function Contact() {
                     </p>
 
                     {/* MINI TAG */}
-                    <div className="mt-8 inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#ead7d8] bg-white/80 text-sm text-[#777] shadow-sm">
+                    <div className="mt-8 inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#ead7d8] bg-white/80 text-sm text-[#777] shadow-sm mx-auto md:mx-0">
                       <span className="w-2 h-2 rounded-full bg-[#b97c80]"></span>
                       Premium Residential Destination
                     </div>
@@ -372,7 +373,7 @@ export default function Contact() {
               {/* TIMING SIDE */}
               <div className="relative p-10 lg:p-14">
 
-                <div className="flex items-start gap-5">
+                <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left gap-5">
 
                   {/* ICON */}
                   <motion.div
@@ -407,7 +408,7 @@ export default function Contact() {
                       className="mt-8 rounded-[28px] border border-[#f0e3e3] bg-gradient-to-br from-white to-[#fff8f8] p-7 shadow-lg"
                     >
 
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col items-center gap-4 text-center md:flex-row md:items-center md:justify-between md:text-left">
 
                         <div>
                           <p className="text-[#444] text-lg font-semibold">
@@ -419,7 +420,7 @@ export default function Contact() {
                           </p>
                         </div>
 
-                        <div className="text-right">
+                        <div className="md:text-right">
 
                           <p className="text-2xl font-black bg-gradient-to-r from-[#d8a8aa] to-[#b97c80] bg-clip-text text-transparent">
                             9 AM – 7 PM
@@ -472,7 +473,7 @@ export default function Contact() {
                     <FloatInput label="Your Full Name" name="name" value={form.name} onChange={handleChange} required />
                   </motion.div>
 
-                  <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
+                  <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FloatInput label="Email Address" type="email" name="email" value={form.email} onChange={handleChange} required />
                     <FloatInput label="Mobile Number" type="tel" name="phone" value={form.phone} onChange={handleChange} required />
                   </motion.div>
